@@ -12,7 +12,13 @@ def obtener_proyectos():
             sql = "SELECT `nombre`,`descripcion`,`responsable` FROM `proyectos`"
             cursor.execute(sql)
             result = cursor.fetchall()
-            print(result)
+            print("""
+Nombre              Descripcion                                    Responsable
+            """)
+            #print(result)
+            for x in result:
+                    print(x['nombre'], " ", x['descripcion']," ",  x['responsable'], end="\n" )
+                   
     finally:
         connection.close()
 
@@ -79,5 +85,3 @@ def eliminar_proyecto(id):
     finally:
         connection.close()
 
-eliminar_proyecto(4)
-obtener_proyectos()

@@ -1,4 +1,5 @@
 import os
+import database
 
 
 def mostrar_menu():
@@ -14,13 +15,10 @@ def mostrar_menu():
     respuesta = int(input(">>"))
     return  respuesta
 
-def mostrar_listado(): 
+def mostrar_listado_proyectos(): 
 	os.system("cls")
-	print("""
-		Nombre               Descripcion            		Responsable 
-		proyecto1 			 descripcion del proyecto 1		Gallo 
-
-		""") 
+	database.obtener_proyectos()
+	print("\n")
 	print (" Volver al menu. Presione 0 ")
 	respuesta = int(input(">>"))
 	return respuesta

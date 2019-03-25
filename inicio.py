@@ -15,16 +15,7 @@ if usuario == "administrador" and contrasena == "123":
     respuesta = administrador.mostrar_menu()
 
     if respuesta == 1: 
-    	respuesta_mostrar_listado =	administrador.mostrar_listado() 
-    	if respuesta_mostrar_listado == 0:
-    		administrador.mostrar_menu()
-    elif  respuesta == 2:
-    	respuesta_editar_proyecto = administrador.editar_proyecto()
-    	if respuesta_editar_proyecto == 1:
-    		respuesta_editar_campos = administrador.editar_campos()
-    		if respuesta_editar_campos == 1:
-    			respuesta_nuevo_nombre = administrador.nuevo_nombre()
-				if respuesta_nuevo_nombre == 1:
-					print("Eligiste 1")	
+    	respuesta_mostrar_listado_proyectos =	administrador.mostrar_listado_proyectos() 
+
 else :
     print("El usuario no existe")
