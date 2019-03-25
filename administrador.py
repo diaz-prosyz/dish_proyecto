@@ -7,3 +7,11 @@ def mostrar_menu():
     4.- Crear un proyecto 
     """)
     respuesta = int(input(">>"))
+    return = respuesta
+
+def mostrar_listado(): 
+	print("""
+		Nombre               Descripcion            		Responsable 
+		proyecto1 			 descripcion del proyecto 1		Gallo 
+		
+		""")

@@ -12,7 +12,10 @@ contrasena = input("Contraseña : ")
 if usuario == "administrador" and contrasena == "123":
     os.system("cls")
     print("Bienvenido Administrador")
-    administrador.mostrar_menu()
+    respuesta = administrador.mostrar_menu()
+
+    if respuesta == 1: 
+    	administrador.mostrar_listado()
 
 else :
     print("El usuario no existe")
