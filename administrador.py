@@ -7,7 +7,7 @@ def mostrar_menu():
     4.- Crear un proyecto 
     """)
     respuesta = int(input(">>"))
-    return = respuesta
+    return  respuesta
 
 def mostrar_listado(): 
 	print("""
