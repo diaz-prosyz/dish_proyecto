@@ -59,3 +59,18 @@ def nuevo_nombre():
 		""")	
 	respuesta = input(" Nuevo Nombre: ")
 	print (respuesta)
+	print (" Volver al menu. Presione 0 ")
+	respuesta = int(input(">>"))
+	return respuesta
+
+def nueva_descripcion():
+	os.system("cls")
+	print("""
+		Ingrese nueva descripcion. Presione Enter para guardar
+	
+	""")
+	respuesta = input("Nueva Descripcion: ")
+	print (respuesta)
+	print (" Volver al menu. Presione 0 ")
+	respuesta = int(input(">>"))
+	return respuesta

@@ -23,7 +23,8 @@ if usuario == "administrador" and contrasena == "123":
     	if respuesta_editar_proyecto == 1:
     		respuesta_editar_campos = administrador.editar_campos()
     		if respuesta_editar_campos == 1:
-    			administrador.nuevo_nombre()
-				
+    			respuesta_nuevo_nombre = administrador.nuevo_nombre()
+				if respuesta_nuevo_nombre == 1:
+					print("Eligiste 1")	
 else :
     print("El usuario no existe")
