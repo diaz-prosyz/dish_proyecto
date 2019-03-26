@@ -27,7 +27,8 @@ def obtener_proyecto(id):
             sql = "SELECT `nombre`,`descripcion`,`responsable` FROM `proyectos` WHERE `id` = %s;"
             cursor.execute(sql,(id))
             result = cursor.fetchall()
-            print(result)
+            print(tabulate(result))
+            input("")
     finally:
         pass
 
@@ -81,7 +82,18 @@ def crear_proyecto(nombre, descripcion, responsable):
             obtener_proyectos()
     finally:
         pass
+def crear_usuario(usuario, contrasenia, rol):
+    try:
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO usuarios (usuario, contrasenia, rol) VALUES(%s,%s,%s)"
+            cursor.execute(sql,(usuario,contrasenia,rol))
+            connection.commit()
+            print("Se ha creado el usuario con exito")
+            input("ENTER para continuar.")
+            os.system("cls")
 
+    finally:
+        pass
 def eliminar_proyecto(id):
     try:
         with connection.cursor() as cursor:
@@ -92,3 +104,16 @@ def eliminar_proyecto(id):
     finally:
         pass
 
+def validar_usuario(usuario,contrasenia):
+    os.system("cls")
+    try:
+        with connection.cursor() as cursor:
+            sql = "SELECT `usuario`,`contrasenia`,`rol`   FROM `usuarios` WHERE `usuario` = %s AND `contrasenia` = %s ;"
+            cursor.execute(sql,(usuario,contrasenia))
+            result = cursor.fetchall()
+            if result:
+                return result
+            else: 
+                return False
+    finally:
+        pass

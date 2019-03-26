@@ -11,6 +11,7 @@ def mostrar_menu():
     3.- Eliminar un proyecto 
     4.- Crear un proyecto 
     5.- Ver informacion de una API publica 
+	6.- Crear un usuario
     """)
     respuesta = int(input(">>"))
     return  respuesta
