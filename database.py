@@ -1,5 +1,6 @@
 import pymysql.cursors
 import os
+from tabulate import tabulate
 connection = pymysql.connect(host='localhost',
                              user = 'root',
                              password='',
@@ -12,12 +13,10 @@ def obtener_proyectos():
             sql = "SELECT `id`,`nombre`,`descripcion`,`responsable` FROM `proyectos`"
             cursor.execute(sql)
             result = cursor.fetchall()
-            print("""
-ID                      Nombre              Descripcion                                    Responsable
-            """)
             #print(result)
-            for x in result:
-                    print(x['id']," ",x['nombre'], " ", x['descripcion']," ",  x['responsable'], end="\n" )
+            ##for x in result:
+              ##      print(x['id']," ",x['nombre'], " ", x['descripcion']," ",  x['responsable'], end="\n" )
+            print(tabulate(result))
                    
     finally:
         pass
@@ -59,9 +58,7 @@ def cambiar_descripcion(id,descripcion):
     finally:
         pass
 
-def cambiar_responsable():
-    id = int(input("id: "))
-    responsable = input("responsable: ")
+def cambiar_responsable(id,responsable):
     os.system("cls")
 
     try:
@@ -73,7 +70,18 @@ def cambiar_responsable():
 
     finally:
             pass
-            
+
+def crear_proyecto(nombre, descripcion, responsable):
+    try:
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO proyectos (nombre, descripcion, responsable) VALUES(%s,%s,%s)"
+            cursor.execute(sql,(nombre,descripcion,responsable))
+            connection.commit()
+            os.system("cls")
+            obtener_proyectos()
+    finally:
+        pass
+
 def eliminar_proyecto(id):
     try:
         with connection.cursor() as cursor:

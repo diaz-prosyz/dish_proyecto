@@ -32,12 +32,25 @@ if usuario == "administrador" and contrasena == "123":
                 if opcion_editar_campos == 2:
                     respuesta_nueva_descripcion = administrador.nueva_descripcion()
                     database.cambiar_descripcion(id_editar_proyecto,respuesta_nueva_descripcion)
-
-
-
+                if opcion_editar_campos == 3:
+                    respuesta_nueva_responsable = administrador.nuevo_responsable()
+                    database.cambiar_responsable(id_editar_proyecto,respuesta_nueva_responsable)
 
         if respuesta_menu == 3:#eliminar el proyecto
-            pass
+            print("Seleccione el proyecto a eliminar.")
+            id_eliminar_proyecto = administrador.mostrar_listado_proyectos()
+            database.eliminar_proyecto(id_eliminar_proyecto)
+        
+        if respuesta_menu == 4: #Crear proyecto
+            os.system("cls")
+            print("Formulario de creación de proyectos.Presione enter para guardar cada campo requerido")
+            nombre = input("Dame el nombre del proyecto: ")
+            descripcion = input("Dame la descripcion: ")
+            responsable = input("Dame el responsable: ")
+
+            database.crear_proyecto(nombre,descripcion,responsable)
+
+
                     
 
         if respuesta_menu == 0:
