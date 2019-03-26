@@ -25,13 +25,7 @@ def mostrar_listado_proyectos():
 
 def editar_proyecto():
 	os.system("cls")
-	print("""
-		 Selecione el ID del proyecto que desea editar
-
-		 ID 	Nombre              Descripcion            				Responsable 
-		 1	    proyecto1 			descrpcion del proyecyo 1           Gallo 
-
-		""")
+	database.obtener_proyectos()
 	respuesta = int(input(">>"))
 	return respuesta
 
@@ -56,10 +50,9 @@ def nuevo_nombre():
 
 		""")	
 	respuesta = input(" Nuevo Nombre: ")
-	print (respuesta)
 	print (" Volver al menu. Presione 0 ")
-	respuesta = int(input(">>"))
 	return respuesta
+	
 
 def nueva_descripcion():
 	os.system("cls")

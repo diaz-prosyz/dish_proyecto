@@ -9,18 +9,18 @@ connection = pymysql.connect(host='localhost',
 def obtener_proyectos():
     try:
         with connection.cursor() as cursor:
-            sql = "SELECT `nombre`,`descripcion`,`responsable` FROM `proyectos`"
+            sql = "SELECT `id`,`nombre`,`descripcion`,`responsable` FROM `proyectos`"
             cursor.execute(sql)
             result = cursor.fetchall()
             print("""
-Nombre              Descripcion                                    Responsable
+ID                      Nombre              Descripcion                                    Responsable
             """)
             #print(result)
             for x in result:
-                    print(x['nombre'], " ", x['descripcion']," ",  x['responsable'], end="\n" )
+                    print(x['id']," ",x['nombre'], " ", x['descripcion']," ",  x['responsable'], end="\n" )
                    
     finally:
-        connection.close()
+        pass
 
 def obtener_proyecto(id):
     try:
@@ -30,11 +30,9 @@ def obtener_proyecto(id):
             result = cursor.fetchall()
             print(result)
     finally:
-        connection.close()
+        pass
 
-def cambiar_nombre():
-    id = int(input("id: "))
-    nombre = input("nombre: ")
+def cambiar_nombre(id,nombre):
     os.system("cls")
 
     try:
@@ -43,9 +41,11 @@ def cambiar_nombre():
             cursor.execute(sql,(nombre,id))
             connection.commit()
             obtener_proyectos()
+             
+        
 
     finally:
-        connection.close()
+        pass
 def cambiar_descripcion():
     id = int(input("id: "))
     descripcion = input("descripcion: ")
@@ -59,7 +59,7 @@ def cambiar_descripcion():
             obtener_proyectos()
 
     finally:
-        connection.close()
+        pass
 
 def cambiar_responsable():
     id = int(input("id: "))
@@ -74,7 +74,8 @@ def cambiar_responsable():
             obtener_proyectos()
 
     finally:
-        connection.close()
+            pass
+            
 def eliminar_proyecto(id):
     try:
         with connection.cursor() as cursor:
@@ -83,5 +84,5 @@ def eliminar_proyecto(id):
             connection.commit()
             obtener_proyectos()
     finally:
-        connection.close()
+        pass
 
