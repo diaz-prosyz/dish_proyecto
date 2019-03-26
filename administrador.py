@@ -60,8 +60,19 @@ def nueva_descripcion():
 		Ingrese nueva descripcion. Presione Enter para guardar
 	
 	""")
-	respuesta = input("Nueva Descripcion: ")
-	print (respuesta)
+	respuesta = input(" Nueva Descripcion: ")
 	print (" Volver al menu. Presione 0 ")
-	respuesta = int(input(">>"))
 	return respuesta
+
+def nuevo_responsable():
+	os.system("cls")
+	print("""
+		Ingrese responsable. Presione Enter para guardar
+	
+	""")
+	respuesta = input(" Nuevo Responsable: ")
+	print (" Volver al menu. Presione 0 ")
+	return respuesta
+
+	
+	

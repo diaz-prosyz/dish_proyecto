@@ -29,8 +29,15 @@ if usuario == "administrador" and contrasena == "123":
                 if opcion_editar_campos == 1:
                     respuesta_nuevo_nombre = administrador.nuevo_nombre()
                     database.cambiar_nombre(id_editar_proyecto,respuesta_nuevo_nombre)
+                if opcion_editar_campos == 2:
+                    respuesta_nueva_descripcion = administrador.nueva_descripcion()
+                    database.cambiar_descripcion(id_editar_proyecto,respuesta_nueva_descripcion)
 
-        if respuesta_menu == 3
+
+
+
+        if respuesta_menu == 3:#eliminar el proyecto
+            pass
                     
 
         if respuesta_menu == 0:

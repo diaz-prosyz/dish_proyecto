@@ -46,9 +46,7 @@ def cambiar_nombre(id,nombre):
 
     finally:
         pass
-def cambiar_descripcion():
-    id = int(input("id: "))
-    descripcion = input("descripcion: ")
+def cambiar_descripcion(id,descripcion):
     os.system("cls")
 
     try:
