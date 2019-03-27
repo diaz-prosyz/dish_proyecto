@@ -1,8 +1,8 @@
-import os
+import os 
 import database
 
 
-def mostrar_menu():
+def mostrar_menu(): #Muestra el menu principal
     os.system("cls")
     print ("""
     Seleccione la opcion que desea realizar 
@@ -16,7 +16,7 @@ def mostrar_menu():
     respuesta = int(input(">>"))
     return  respuesta
 
-def mostrar_listado_proyectos(): 
+def mostrar_listado_proyectos():  #Muestra el listado de proyectos desde la base de datos
 	os.system("cls")
 	database.obtener_proyectos()
 	print("\n")
@@ -24,13 +24,13 @@ def mostrar_listado_proyectos():
 	respuesta = int(input(">>"))
 	return respuesta
 
-def editar_proyecto():
+def editar_proyecto():  #Menu de edicion
 	os.system("cls")
 	database.obtener_proyectos()
 	respuesta = int(input(">>"))
 	return respuesta
 
-def editar_campos():
+def editar_campos(): # Seleccion de que campo se va a editar
 	os.system("cls")
 	print("""
 	
@@ -44,7 +44,7 @@ def editar_campos():
 	respuesta = int(input(">>"))
 	return respuesta
 
-def nuevo_nombre():
+def nuevo_nombre(): #Edicion de nombre
 	os.system("cls")
 	print("""
 		Ingrese un nombre. Presione Enter para guardar
@@ -55,7 +55,7 @@ def nuevo_nombre():
 	return respuesta
 	
 
-def nueva_descripcion():
+def nueva_descripcion(): #Edicion de descripcion
 	os.system("cls")
 	print("""
 		Ingrese nueva descripcion. Presione Enter para guardar
@@ -65,7 +65,7 @@ def nueva_descripcion():
 	print (" Volver al menu. Presione 0 ")
 	return respuesta
 
-def nuevo_responsable():
+def nuevo_responsable(): #Edicion de responsable
 	os.system("cls")
 	print("""
 		Ingrese responsable. Presione Enter para guardar
