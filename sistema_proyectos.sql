@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-03-2019 a las 05:02:54
+-- Tiempo de generación: 27-03-2019 a las 18:50:10
 -- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.3
+-- Versión de PHP: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,7 @@ CREATE TABLE `proyectos` (
 
 INSERT INTO `proyectos` (`id`, `nombre`, `descripcion`, `responsable`) VALUES
 (1, 'MySystem Mexico', 'Empresa dedicada a mantenimientos preventivos.', 'Steven Mayoral'),
-(2, 'Gravity electronic Music', 'Canal dedicado a compartir musica electronica.', 'Andres Diaz');
+(2, 'Gravity Electronic Music', 'Canal dedicado a compartir musica electronica.', 'Andres Diaz');
 
 -- --------------------------------------------------------
 
@@ -55,6 +55,14 @@ CREATE TABLE `usuarios` (
   `contrasenia` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `rol` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `contrasenia`, `rol`) VALUES
+(1, 'administrador', '123', 0),
+(2, 'visor', '123', 1);
 
 --
 -- Índices para tablas volcadas
@@ -81,13 +89,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
